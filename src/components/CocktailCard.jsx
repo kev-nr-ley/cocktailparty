@@ -1,30 +1,16 @@
 import React from "react";
-import {
-  Box,
-  Text,
-  Heading,
-  Flex,
-  Button,
-  Link,
-  VStack,
-  HStack,
-  List,
-  ListItem,
-} from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Text, Heading, VStack, HStack } from "@chakra-ui/react";
 import CocktailImageContainer from "./CocktailImageContainer";
 
 export default function CocktailCard(props) {
   const cocktail = JSON.parse(props.cocktail);
-  const [currentCategory, setCurrentCategory] = useState("All");
-  
+
   return (
     <VStack
       alignItems='flex-start'
-      w='100%'
       h='100%'
-      minW='300px'
-      maxW='32rem'
+      minW='360px'
+      w='360px'
       key={cocktail.name}
       border='4px solid black'
       m='1rem'
@@ -34,8 +20,9 @@ export default function CocktailCard(props) {
         {cocktail.name}
       </Heading>
 
-      <HStack justifyContent={"space-between"}>
-        <Text>
+      <HStack justifyContent={"space-between"} w='100%'>
+        <Text alignSelf='flex-start' mt='1rem'>
+          {cocktail.glass} glass <br />
           {cocktail.ingredients.map((ingredient, index) => {
             return (
               <Text as='span' key={index} m='0.25rem'>
@@ -51,13 +38,12 @@ export default function CocktailCard(props) {
 
         <CocktailImageContainer
           alignSelf='flex-start'
-          justifySelf='flex-start'
           filename={cocktail.glass}
-          w='50%'
+          w='8rem'
         />
       </HStack>
-      {/* Add new line on each preparation sentence */}
 
+      {/* Add new line on each preparation sentence */}
       {cocktail.preparation ? (
         <Text whiteSpace={"pre-line"}>{cocktail.preparation} </Text>
       ) : null}

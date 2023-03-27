@@ -1,16 +1,5 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Button,
-  Link,
-  VStack,
-  List,
-  ListItem,
-  Select,
-} from "@chakra-ui/react";
+import { Text, VStack, List } from "@chakra-ui/react";
 
 export default function CocktailList(props) {
   const { cocktaildata, setcocktail } = props;

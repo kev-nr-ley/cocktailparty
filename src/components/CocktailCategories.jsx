@@ -1,18 +1,6 @@
 import React from "react";
-import {
-  Box,
-  Flex,
-  Text,
-  Heading,
-  Button,
-  Link,
-  VStack,
-  List,
-  ListItem,
-  Select,
-  Grid,
-} from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Box, Flex, Heading, List, ListItem, Grid } from "@chakra-ui/react";
+import { useState } from "react";
 
 export default function CocktailCategories(props) {
   const { cocktaildata, setcocktail } = props;
@@ -50,11 +38,7 @@ export default function CocktailCategories(props) {
   };
 
   return (
-    <Flex
-      w='100%'
-      alignItems='flex-start'
-      justifyContent='flex-start'
-      {...props}>
+    <Flex alignItems='flex-start' justifyContent='flex-start' {...props}>
       <Grid gridTemplateColumns='repeat(1, 1fr)'>
         {uniqueCategories.map((category, index) => {
           return (
@@ -87,7 +71,7 @@ export default function CocktailCategories(props) {
         as={Flex}
         flexWrap='wrap'
         alignItems='flex-start'
-        justifyContent='flex-start'
+        justifyContent='center'
         w='100%'>
         {currentCategoryCocktails.map((cocktail, index) => {
           return (
